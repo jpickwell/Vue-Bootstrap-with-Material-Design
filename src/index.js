@@ -37,7 +37,6 @@ import DropdownItem, { mdbDropdownItem } from './components/DropdownItem';
 import DropdownMenu, { mdbDropdownMenu } from './components/DropdownMenu';
 import DropdownToggle, { mdbDropdownToggle } from './components/DropdownToggle';
 import EdgeHeader, { mdbEdgeHeader } from './components/EdgeHeader';
-import Fa, { mdbIcon } from './components/Fa';
 import Footer, { mdbFooter } from './components/Footer';
 import HelloWorld, { mdbHelloWorld } from './components/HelloWorld';
 import Jumbotron, { mdbJumbotron } from './components/Jumbotron';
@@ -114,7 +113,6 @@ export {
   DropdownMenu,
   DropdownToggle,
   EdgeHeader,
-  Fa,
   Footer,
   HelloWorld,
   Jumbotron,
@@ -188,7 +186,6 @@ export {
   mdbDropdownMenu,
   mdbDropdownToggle,
   mdbEdgeHeader,
-  mdbIcon,
   mdbFooter,
   mdbHelloWorld,
   mdbJumbotron,

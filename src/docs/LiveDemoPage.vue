@@ -55,11 +55,11 @@
       <badge color="info-color">Info</badge>
       <badge color="warning-color">Warning</badge>
       <h5>Pills with Font Awesome</h5>
-      <badge pill><fa icon="snowflake-o"/></badge>
-      <badge color="default-color" pill><fa icon="hand-spock-o"/></badge>
-      <badge color="success-color" pill><fa icon="image"/></badge>
-      <badge color="info-color" pill><fa icon="mortar-board"/></badge>
-      <badge color="warning-color" pill><fa icon="paint-brush"/></badge>
+      <badge pill><fa-icon :icon="['far', 'snowflake']"></fa-icon></badge>
+      <badge color="default-color" pill><fa-icon :icon="['far', 'hand-spock']"></fa-icon></badge>
+      <badge color="success-color" pill><fa-icon icon="image"></fa-icon></badge>
+      <badge color="info-color" pill><fa-icon icon="graduation-cap"></fa-icon></badge>
+      <badge color="warning-color" pill><fa-icon icon="paint-brush"></fa-icon></badge>
     </section>
     <!-- /BADGES -->
     <hr class="mt-4">
@@ -105,10 +105,10 @@
             </dropdown>
           </navbar-nav>
           <navbar-nav right>
-            <navbar-item href="#"><fa icon="twitter"></fa></navbar-item>
-            <navbar-item href="#"><fa icon="google-plus"></fa></navbar-item>
+            <navbar-item href="#"><fa-icon :icon="['fab', 'twitter']"></fa-icon></navbar-item>
+            <navbar-item href="#"><fa-icon :icon="['fab', 'google-plus-g']"></fa-icon></navbar-item>
             <dropdown tag="li" class="nav-item">
-              <dropdown-toggle slot="toggle" tag="a" navLink color="default" waves-fixed><fa icon="user"></fa></dropdown-toggle>
+              <dropdown-toggle slot="toggle" tag="a" navLink color="default" waves-fixed><fa-icon icon="user"></fa-icon></dropdown-toggle>
               <dropdown-menu color="default">
                 <dropdown-item>Action</dropdown-item>
                 <dropdown-item>Another action</dropdown-item>
@@ -123,10 +123,10 @@
           <navbar-nav>
           </navbar-nav>
           <navbar-nav right>
-            <navbar-item href="#"><fa icon="envelope"></fa> Contact</navbar-item>
-            <navbar-item href="#"><fa icon="cog"></fa> Settings</navbar-item>
+            <navbar-item href="#"><fa-icon icon="envelope"></fa-icon> Contact</navbar-item>
+            <navbar-item href="#"><fa-icon icon="cog"></fa-icon> Settings</navbar-item>
             <dropdown tag="li" class="nav-item">
-              <dropdown-toggle slot="toggle" tag="a" navLink color="danger" waves-fixed><fa icon="user"></fa> Profile</dropdown-toggle>
+              <dropdown-toggle slot="toggle" tag="a" navLink color="danger" waves-fixed><fa-icon icon="user"></fa-icon> Profile</dropdown-toggle>
               <dropdown-menu color="danger">
                 <dropdown-item>Action</dropdown-item>
                 <dropdown-item>Another action</dropdown-item>
@@ -530,55 +530,59 @@
 </template>
 
 <script>
-import { Container, Row, Column, Btn, Badge, Fa, Navbar, NavbarItem, NavbarNav, NavbarCollapse, MdInput, MdTextarea, Breadcrumb, BreadcrumbItem, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Card, CardImg, CardHeader, CardFooter, CardBody, Tbl, TblHead, TblBody, Pagination, PageNav, PageItem, Media, MediaImage, MediaBody, ListGroup, ListGroupItem, LineChart, RadarChart, BarChart, PolarChart, PieChart, DoughnutChart, ViewWrapper, MdMask, EdgeHeader, Tooltip } from 'mdbvue';
+import {
+  Badge, BarChart, Breadcrumb, BreadcrumbItem, Btn, Card, CardBody, CardFooter, CardHeader, CardImg, Container, Column,
+  DoughnutChart, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, EdgeHeader, LineChart, ListGroup, ListGroupItem,
+  MdInput, MdMask, MdTextarea, Media, MediaBody, MediaImage, Navbar, NavbarCollapse, NavbarItem, NavbarNav, PageItem,
+  PageNav, Pagination, PieChart, PolarChart, RadarChart, Row, Tbl, TblBody, TblHead, Tooltip, ViewWrapper
+} from 'mdbvue';
 
 export default {
   name: 'LiveDemoPage',
   components: {
-    Container,
-    Row,
-    Column,
-    Btn,
     Badge,
-    Fa,
-    Navbar,
-    NavbarItem,
-    NavbarNav,
-    NavbarCollapse,
-    MdInput,
-    MdTextarea,
+    BarChart,
     Breadcrumb,
     BreadcrumbItem,
-    Dropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
+    Btn,
     Card,
-    CardImg,
-    CardHeader,
-    CardFooter,
     CardBody,
-    Tbl,
-    TblHead,
-    TblBody,
-    Pagination,
-    PageNav,
-    PageItem,
-    Media,
-    MediaImage,
-    MediaBody,
+    CardFooter,
+    CardHeader,
+    CardImg,
+    Container,
+    Column,
+    DoughnutChart,
+    Dropdown,
+    DropdownItem,
+    DropdownMenu,
+    DropdownToggle,
+    EdgeHeader,
+    LineChart,
     ListGroup,
     ListGroupItem,
-    LineChart,
-    RadarChart,
-    BarChart,
-    PolarChart,
-    PieChart,
-    DoughnutChart,
-    ViewWrapper,
+    MdInput,
     MdMask,
-    EdgeHeader,
-    Tooltip
+    MdTextarea,
+    Media,
+    MediaBody,
+    MediaImage,
+    Navbar,
+    NavbarCollapse,
+    NavbarItem,
+    NavbarNav,
+    PageItem,
+    PageNav,
+    Pagination,
+    PieChart,
+    PolarChart,
+    RadarChart,
+    Row,
+    Tbl,
+    TblBody,
+    TblHead,
+    Tooltip,
+    ViewWrapper
   },
   data() {
     return {
@@ -774,7 +778,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1 {
   margin: 50px 0;

@@ -24,19 +24,19 @@
       <row>
         <column md="4" class="text-center home-feature-box">
           <a href="#/css">
-            <fa icon="css3" class="pink-text" />
+            <fa-icon class="pink-text" :icon="['fab', 'css3']"></fa-icon>
             <span>CSS</span>
           </a>
         </column>
         <column md="4" class="text-center home-feature-box">
           <a href="#/components">
-            <fa icon="cubes" class="blue-text" />
+            <fa-icon class="blue-text" icon="cubes"></fa-icon>
             <span>COMPONENTS</span>
           </a>
         </column>
         <column md="4" class="text-center home-feature-box">
           <a href="#/advanced">
-            <fa icon="code" class="green-text" />
+            <fa-icon class="green-text" icon="code"></fa-icon>
             <span>ADVANCED</span>
           </a>
         </column>
@@ -50,22 +50,21 @@
 </template>
 
 <script>
-import { Container, Column, Row, Fa, Navbar, NavbarItem, NavbarNav, NavbarCollapse, Btn, EdgeHeader, CardBody } from 'mdbvue';
+import { Btn, CardBody, Column, Container, EdgeHeader, Navbar, NavbarCollapse, NavbarItem, NavbarNav, Row } from 'mdbvue';
 
 export default {
   name: 'HomePage',
   components: {
-    Container,
+    Btn,
+    CardBody,
     Column,
-    Row,
-    Fa,
+    Container,
+    EdgeHeader,
     Navbar,
+    NavbarCollapse,
     NavbarItem,
     NavbarNav,
-    NavbarCollapse,
-    Btn,
-    EdgeHeader,
-    CardBody
+    Row
   }
 };
 </script>
@@ -80,7 +79,7 @@ h1, h2 {
   padding: 40px 0;
 }
 
-.home-feature-box i {
+.home-feature-box svg {
   font-size: 6rem;
 }
 

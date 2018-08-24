@@ -96,29 +96,29 @@
       <tbl-head>
         <tr>
           <th>#</th>
-          <th><i class="fa fa-leaf mr-2 blue-text" aria-hidden="true"></i> thead col 1</th>
-          <th><i class="fa fa-leaf mr-2 teal-text" aria-hidden="true"></i> thead col 2</th>
-          <th><i class="fa fa-leaf mr-2 indigo-text" aria-hidden="true"></i> thead col 3</th>
+          <th><fa-icon aria-hidden="true" class="mr-2 blue-text" icon="leaf"></fa-icon> thead col 1</th>
+          <th><fa-icon aria-hidden="true" class="mr-2 teal-text" icon="leaf"></fa-icon> thead col 2</th>
+          <th><fa-icon aria-hidden="true" class="mr-2 indigo-text" icon="leaf"></fa-icon> thead col 3</th>
         </tr>
       </tbl-head>
       <tbl-body>
         <tr>
           <th scope="row">1</th>
-          <td><i class="fa fa-diamond mr-2 grey-text" aria-hidden="true"></i>Cell 1</td>
-          <td><i class="fa fa-download mr-2 grey-text" aria-hidden="true"></i>Cell 2</td>
-          <td><i class="fa fa-book mr-2 grey-text" aria-hidden="true"></i>Cell 3</td>
+          <td><fa-icon aria-hidden="true" class="mr-2 grey-text" :icon="['far', 'gem']"></fa-icon> Cell 1</td>
+          <td><fa-icon aria-hidden="true" class="mr-2 grey-text" icon="download"></fa-icon> Cell 2</td>
+          <td><fa-icon aria-hidden="true" class="mr-2 grey-text" icon="book"></fa-icon> Cell 3</td>
         </tr>
         <tr>
           <th scope="row">2</th>
-          <td><i class="fa fa-graduation-cap mr-2 grey-text" aria-hidden="true"></i>Cell 4</td>
-          <td><i class="fa fa-gift mr-2 grey-text" aria-hidden="true"></i>Cell 5</td>
-          <td><i class="fa fa-image mr-2 grey-text" aria-hidden="true"></i>Cell 6</td>
+          <td><fa-icon aria-hidden="true" class="mr-2 grey-text" icon="graduation-cap"></fa-icon> Cell 4</td>
+          <td><fa-icon aria-hidden="true" class="mr-2 grey-text" icon="gift"></fa-icon> Cell 5</td>
+          <td><fa-icon aria-hidden="true" class="mr-2 grey-text" icon="image"></fa-icon> Cell 6</td>
         </tr>
         <tr>
           <th scope="row">3</th>
-          <td><i class="fa fa-magic mr-2 grey-text" aria-hidden="true"></i>Cell 7</td>
-          <td><i class="fa fa-table mr-2 grey-text" aria-hidden="true"></i>Cell 8</td>
-          <td><i class="fa fa-edit mr-2 grey-text" aria-hidden="true"></i>Cell 9</td>
+          <td><fa-icon aria-hidden="true" class="mr-2 grey-text" icon="magic"></fa-icon> Cell 7</td>
+          <td><fa-icon aria-hidden="true" class="mr-2 grey-text" icon="table"></fa-icon> Cell 8</td>
+          <td><fa-icon aria-hidden="true" class="mr-2 grey-text" :icon="['far', 'edit']"></fa-icon> Cell 9</td>
         </tr>
       </tbl-body>
     </tbl>
@@ -133,10 +133,10 @@
 
           <div>
               <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-                  <i class="fa fa-th-large mt-0"></i>
+                  <fa-icon class="mt-0" icon="th-large"></fa-icon>
               </button>
               <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-                  <i class="fa fa-columns mt-0"></i>
+                  <fa-icon class="mt-0" icon="columns"></fa-icon>
               </button>
           </div>
 
@@ -144,13 +144,13 @@
 
           <div>
               <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-                  <i class="fa fa-pencil mt-0"></i>
+                  <fa-icon class="mt-0" icon="pencil-alt"></fa-icon>
               </button>
               <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-                  <i class="fa fa-remove mt-0"></i>
+                  <fa-icon class="mt-0" icon="times"></fa-icon>
               </button>
               <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-                  <i class="fa fa-info-circle mt-0"></i>
+                  <fa-icon class="mt-0" icon="info-circle"></fa-icon>
               </button>
           </div>
 
@@ -269,19 +269,17 @@
 </template>
 
 <script>
-import { Tbl, TblHead, TblBody } from 'mdbvue';
+import { Tbl, TblBody, TblHead } from 'mdbvue';
 
 export default {
   name: 'TableAdditionalPage',
   components: {
     Tbl,
-    TblHead,
-    TblBody
+    TblBody,
+    TblHead
   }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 </style>

@@ -49,7 +49,13 @@
             class="th-sm sorting"
             v-on:click="sort(column.field, column.sort)"
           >
-            {{column.label}} <i class="fa fa-sort float-right"></i>
+            {{column.label}}
+            <slot
+              class="float-right"
+              name="sort"
+            >
+              ⬍
+            </slot>
           </th>
         </tr>
       </tbl-head>
@@ -87,7 +93,13 @@
                   class="th-sm sorting"
                   v-on:click="sort(column.field, column.sort)"
                 >
-                  {{column.label}} <i class="fa fa-sort float-right"></i>
+                  {{column.label}}
+                  <slot
+                    class="float-right"
+                    name="sort"
+                  >
+                    ⬍
+                  </slot>
                 </th>
               </tr>
             </tbl-head>

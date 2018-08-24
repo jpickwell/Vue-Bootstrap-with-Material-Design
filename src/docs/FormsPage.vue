@@ -74,7 +74,7 @@
             <md-input label="Your email" icon="envelope" type="email"/>
           </div>
           <div class="text-center">
-            <btn outline="info">Send <fa icon="paper-plane-o" class="ml-1"/></btn>
+            <btn outline="info">Send <fa-icon class="ml-1" :icon="['far', 'paper-plane']"></fa-icon></btn>
           </div>
         </form>
       </column>
@@ -87,7 +87,7 @@
           <label for="defaultFormSubscriptionEmailEx" class="grey-text">Your email</label>
           <input type="email" id="defaultFormSubscriptionEmailEx" class="form-control"/>
           <div class="text-center mt-4">
-            <button class="btn btn-outline-purple" type="submit">Send<i class="fa fa-paper-plane-o ml-2"></i></button>
+            <button class="btn btn-outline-purple" type="submit">Send <fa-icon class="ml-2" :icon="['far', 'paper-plane']"></fa-icon></button>
           </div>
         </form>
       </column>
@@ -104,7 +104,7 @@
             <md-textarea :rows="2" label="Your message" icon="pencil"/>
           </div>
           <div class="text-center">
-            <btn outline="secondary">Send <Fa icon="paper-plane-o" class="ml-1"/></btn>
+            <btn outline="secondary">Send <fa-icon class="ml-1" :icon="['far', 'paper-plane']"></fa-icon></btn>
           </div>
         </form>
       </column>
@@ -123,7 +123,7 @@
           <label for="defaultFormContactMessageEx" class="grey-text">Your message</label>
           <textarea type="text" id="defaultFormContactMessageEx" class="form-control" rows="3"></textarea>
           <div class="text-center mt-4">
-            <button class="btn btn-outline-warning" type="submit">Send<i class="fa fa-paper-plane-o ml-2"></i></button>
+            <button class="btn btn-outline-warning" type="submit">Send <fa-icon class="ml-2" :icon="['far', 'paper-plane']"></fa-icon></button>
           </div>
         </form>
       </column>
@@ -159,7 +159,7 @@
               <label htmlFor="defaultFormCardEmailEx" class="grey-text font-weight-light">Your email</label>
               <input type="email" id="defaultFormCardEmailEx" class="form-control" />
               <div class="text-center py-4 mt-3">
-                <button class="btn btn-outline-purple" type="submit">Send<i class="fa fa-paper-plane-o ml-2"></i></button>
+                <button class="btn btn-outline-purple" type="submit">Send <fa-icon class="ml-2" :icon="['far', 'paper-plane']"></fa-icon></button>
               </div>
             </form>
           </div>
@@ -172,7 +172,7 @@
         <btn @click.native="showModal = true" color="info">Launch modal contact form</btn>
         <modal v-if="showModal" @close="showModal = false" cascade class="text-left">
           <modal-header class="primary-color white-text">
-            <h4 class="title"><fa class="fa fa-pencil" /> Contact form</h4>
+            <h4 class="title"><fa-icon icon="pencil-alt"></fa-icon> Contact form</h4>
           </modal-header>
           <modal-body class="grey-text">
             <md-input size="sm" label="Your name" icon="user" group type="text" validate error="wrong" success="right"/>
@@ -191,24 +191,23 @@
 </template>
 
 <script>
-import { Container, Row, Column, MdInput, MdTextarea, Btn, Fa, Card, CardBody, Modal, ModalHeader, ModalBody, ModalFooter } from 'mdbvue';
+import { Btn, Card, CardBody, Column, Container, MdInput, MdTextarea, Modal, ModalBody, ModalFooter, ModalHeader, Row } from 'mdbvue';
 
 export default {
   name: 'FormsPage',
   components: {
-    Container, 
-    Row,
-    Column,
-    MdInput,
-    MdTextarea,
-    Btn, 
-    Fa,
+    Btn,
     Card,
     CardBody,
+    Column,
+    Container,
+    MdInput,
+    MdTextarea,
     Modal,
-    ModalHeader,
     ModalBody,
-    ModalFooter
+    ModalFooter,
+    ModalHeader,
+    Row
   },
   data() {
     return {

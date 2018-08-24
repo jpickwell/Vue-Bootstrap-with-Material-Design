@@ -1,11 +1,22 @@
 <template>
-  <nav :class="navClass" :is="tag" :style="navStyles">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" :data-target="target" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+  <component
+    :class="navClass"
+    :is="tag"
+    :style="navStyles"
+  >
+    <button
+      :aria-controls="target"
+      :data-target="`#${target}`"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      class="navbar-toggler"
+      data-toggle="collapse"
+      type="button"
+    >
+      <span class="navbar-toggler-icon" />
     </button>
-    <slot></slot>
-  </nav>
+    <slot />
+  </component>
 </template>
 
 
@@ -14,37 +25,37 @@ import classNames from 'classnames';
 
 const Navbar = {
   props: {
-    tag: {
-      type: String,
-      default: 'nav'
-    },
-    expand: {
-      type: String,
-      default: 'large'
+    color: {
+      type: String
     },
     dark: {
       type: Boolean,
       default: false
     },
-    position: {
+    expand: {
+      type: String,
+      default: 'large'
+    },
+    navStyle: {
       type: String
     },
-    target: {
-      type: String,
-      default: '#navbarSupportedContent'
+    position: {
+      type: String
     },
     scrolling: {
       type: Boolean,
       default: false
     },
-    color: {
-      type: String
+    tag: {
+      type: String,
+      default: 'nav'
+    },
+    target: {
+      type: String,
+      default: 'navbarSupportedContent'
     },
     transparent: {
       type: Boolean
-    },
-    navStyle: {
-      type: String
     }
   },
   data() {
@@ -139,7 +150,7 @@ const Navbar = {
   },
   mounted() {
     document.addEventListener('click', this.onClick);
-    this.collapse = this.$el.children.navbarSupportedContent;
+    this.collapse = document.getElementById(this.target);
     this.collapse.classList.add('collapse');
   },
   created() {

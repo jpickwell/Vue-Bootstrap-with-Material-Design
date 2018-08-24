@@ -1,26 +1,18 @@
 <template>
-  <div :is="tag" :id="id" :class="className"><slot></slot></div>
+  <div
+    :id="id"
+    class="collapse navbar-collapse"
+  >
+    <slot></slot>
+  </div>
 </template>
 
 <script>
-import classNames from 'classnames';
-
 const NavbarCollapse = {
   props: {
-    tag: {
-      type: String,
-      default: "nav"
-    },
     id: {
       type: String,
       default: 'navbarSupportedContent'
-    }
-  },
-  computed: {
-    className() {
-      return classNames(
-        'navbar-collapse'
-      );
     }
   }
 };

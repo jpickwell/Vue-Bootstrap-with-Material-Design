@@ -1,46 +1,28 @@
-<template>
-  <button :is="tag" :class="className" :type="type" :role="role" @click="wave">
-    <fa v-if="iconLeft" :icon="icon"/>
-    <slot></slot>
-    <fa v-if="iconRight" :icon="icon"/>
-  </button>
-</template>
-
 <script>
 import classNames from 'classnames';
 import waves from '../mixins/waves';
-import Fa from './Fa';
 
-const Btn =  {
-  components: {
-    Fa
-  },
+const Btn = {
+  mixins: [waves],
+
   props: {
-    tag: {
-      type: String,
-      default: "button"
+    action: {
+      type: Boolean,
+      default: false
     },
-    color: {
-      type: String,
-      default: "default"
-    },
-    outline: {
-      type: String,
-    },
-    size: {
-      type: String
+    active: {
+      type: Boolean,
+      default: false
     },
     block: {
       type: Boolean,
       default: false
     },
-    role: {
-      type: String
+    color: {
+      type: String,
+      default: 'default'
     },
-    type: {
-      type: String
-    },
-    active: {
+    darkWaves: {
       type: Boolean,
       default: false
     },
@@ -48,29 +30,7 @@ const Btn =  {
       type: Boolean,
       default: false
     },
-    icon: {
-      type: String
-    },
-    iconLeft: {
-      type: Boolean,
-      default: false
-    },
-    iconRight: {
-      type: Boolean,
-      default: false
-    },
-    waves: {
-      type: Boolean,
-      default: true
-    },
-    darkWaves: {
-      type: Boolean,
-      default: false
-    },
-    gradient: {
-      type: String
-    },
-    rounded: {
+    flat: {
       type: Boolean,
       default: false
     },
@@ -78,23 +38,40 @@ const Btn =  {
       type: Boolean,
       default: false
     },
-    flat: {
-      type: Boolean,
-      default: false
+    gradient: {
+      type: String,
+      default: null
     },
-    action: {
-      type: Boolean,
-      default: false
+    outline: {
+      type: String,
+      default: null
     },
-    transparent: {
+    rounded: {
       type: Boolean,
       default: false
     },
     save: {
       type: Boolean,
       default: false
+    },
+    size: {
+      type: String,
+      default: null
+    },
+    tag: {
+      type: String,
+      default: 'button'
+    },
+    transparent: {
+      type: Boolean,
+      default: false
+    },
+    waves: {
+      type: Boolean,
+      default: true
     }
   },
+
   computed: {
     className() {
       return classNames(
@@ -111,15 +88,24 @@ const Btn =  {
         this.waves ? 'ripple-parent' : ''
       );
     }
-  },
-  mixins: [waves]
+  }
 };
 
 export default Btn;
 export { Btn as mdbBtn };
-
 </script>
 
-<style scoped>
+<template>
+  <component
+    :class="className"
+    :is="tag"
+    @click="wave"
+  >
+    <slot name="prefix" />
+    <slot />
+    <slot name="suffix" />
+  </component>
+</template>
 
+<style scoped>
 </style>

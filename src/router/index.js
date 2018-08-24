@@ -1,52 +1,43 @@
-import Vue from 'vue';
+import { AdvancedPage, ComponentsPage, CSSPage } from '../docs/pages';
+
+import {
+  BadgePage, BreadcrumbPage, ButtonPage, CardPage, CarouselPage, ChartPage, CollapsePage, DataTablePage, DropdownPage,
+  EdgeHeaderPage, FooterPage, FormsPage, GridPage, HomePage, HoverPage, InputsPage, JumbotronPage, ListGroupPage,
+  LiveDemoPage, MasksPage, MediaPage, ModalPage, NavbarPage, NavigationPage, PaginationPage, PanelPage, PopoverPage,
+  ProgressBarsPage, SearchPage, TableAdditionalPage, TablePage, TablePaginationPage, TableResponsivePage,
+  TableScrollPage, TableSearchPage, TableSortPage, TooltipPage, ValidationPage, VideoCarouselPage
+} from '../docs';
+
+import {
+  faAnchor, faAngleRight, faBatteryThreeQuarters, faBook, faBullhorn, faCode, faCoffee, faCog, faColumns, faCubes,
+  faDownload, faEnvelope, faGift, faGraduationCap, faHeart as fasHeart, faImage, faInfoCircle, faLeaf, faMagic,
+  faPaintBrush, faPencilAlt, faSearch, faTable, faThLarge, faTimes, faUser, faUsers, faWheelchair
+} from '@fortawesome/free-solid-svg-icons';
+
+import {
+  faAndroid, faApple, faBtc, faCss3, faFacebookF, faGooglePlusG, faInstagram, faSnapchatGhost, faTwitter
+} from '@fortawesome/free-brands-svg-icons';
+
+import {
+  faComments, faEdit, faGem, faHandSpock, faHeart as farHeart, faPaperPlane, faSnowflake, faSun
+} from '@fortawesome/free-regular-svg-icons';
+
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
 import Router from 'vue-router';
+import Vue from 'vue';
 
-// PAGES
-import CSSPage from '../docs/CSSPage';
-import ComponentsPage from '../docs/ComponentsPage';
-import AdvancedPage from '../docs/AdvancedPage';
+const icons = [
+  faAnchor, faAndroid, faAngleRight, faApple, faBatteryThreeQuarters, faBook, faBtc, faBullhorn, faCode, faCoffee,
+  faCog, faColumns, faComments, faCss3, faCubes, faDownload, faEdit, faEnvelope, faFacebookF, faGem, faGift,
+  faGooglePlusG, faGraduationCap, faHandSpock, faImage, faInfoCircle, faInstagram, faLeaf, faMagic, faPaintBrush,
+  faPaperPlane, faPencilAlt, farHeart, faSearch, fasHeart, faSnapchatGhost, faSnowflake, faSun, faTable, faThLarge,
+  faTimes, faTwitter, faUser, faUsers, faWheelchair
+];
 
-// FREE
-import HomePage from '../docs/HomePage';
-import GridPage from '../docs/GridPage';
-import BadgePage from '../docs/BadgePage';
-import CardPage from '../docs/CardPage';
-import ButtonPage from '../docs/ButtonPage';
-import TablePage from '../docs/TablePage';
-import TableAdditionalPage from '../docs/TableAdditionalPage';
-import DataTablePage from '../docs/DataTablePage';
-import TableResponsivePage from '../docs/TableResponsivePage';
-import TablePaginationPage from '../docs/TablePaginationPage';
-import TableScrollPage from '../docs/TableScrollPage';
-import TableSearchPage from '../docs/TableSearchPage';
-import TableSortPage from '../docs/TableSortPage';
-import DropdownPage from '../docs/DropdownPage';
-import JumbotronPage from '../docs/JumbotronPage';
-import CarouselPage from '../docs/CarouselPage';
-import BreadcrumbPage from '../docs/BreadcrumbPage';
-import FaPage from '../docs/FaPage';
-import InputsPage from '../docs/InputsPage';
-import LiveDemoPage from '../docs/LiveDemoPage';
-import MediaPage from '../docs/MediaPage';
-import ListGroupPage from '../docs/ListGroupPage';
-import NavbarPage from '../docs/NavbarPage';
-import NavigationPage from '../docs/NavigationPage';
-import CollapsePage from '../docs/CollapsePage';
-import PaginationPage from '../docs/PaginationPage';
-import PanelPage from '../docs/PanelPage';
-import ChartPage from '../docs/ChartPage';
-import ProgressBarsPage from '../docs/ProgressBarsPage';
-import TooltipPage from '../docs/TooltipPage';
-import PopoverPage from '../docs/PopoverPage';
-import EdgeHeaderPage from '../docs/EdgeHeaderPage';
-import MasksPage from '../docs/MasksPage';
-import HoverPage from '../docs/HoverPage';
-import VideoCarouselPage from '../docs/VideoCarouselPage';
-import ModalPage from '../docs/ModalPage';
-import FormsPage from '../docs/FormsPage';
-import SearchPage from '../docs/SearchPage';
-import ValidationPage from '../docs/ValidationPage';
-import FooterPage from '../docs/FooterPage';
+library.add(...icons);
+
+Vue.component('fa-icon', FontAwesomeIcon);
 
 Vue.use(Router);
 
@@ -63,11 +54,13 @@ export default new Router({
       path: '/css',
       name: 'CSSPage',
       component: CSSPage
-    }, {
+    },
+    {
       path: '/components',
       name: 'ComponentsPage',
       component: ComponentsPage
-    }, {
+    },
+    {
       path: '/advanced',
       name: 'AdvancedPage',
       component: AdvancedPage
@@ -78,155 +71,188 @@ export default new Router({
       path: '/components/badge',
       name: 'BadgePage',
       component: BadgePage
-    }, {
+    },
+    {
       path: '/components/grid',
       name: 'GridPage',
       component: GridPage
-    }, {
+    },
+    {
       path: '/components/card',
       name: 'CardPage',
       component: CardPage
-    }, {
+    },
+    {
       path: '/components/button',
       name: 'ButtonPage',
       component: ButtonPage
-    }, {
+    },
+    {
       path: '/css/table',
       name: 'TablePage',
       component: TablePage
-    }, {
+    },
+    {
       path: '/css/table-additional',
       name: 'TableAdditionalPage',
       component: TableAdditionalPage
-    }, {
+    },
+    {
       path: '/advanced/datatable',
       name: 'DataTablePage',
       component: DataTablePage
-    }, {
+    },
+    {
       path: '/advanced/table-pagination',
       name: 'TablePaginationPage',
       component: TablePaginationPage
-    }, {
+    },
+    {
       path: '/css/table-responsive',
       name: 'TableResponsviePage',
       component: TableResponsivePage
-    }, {
+    },
+    {
       path: '/advanced/table-search',
       name: 'TableSearchPage',
       component: TableSearchPage
-    }, {
+    },
+    {
       path: '/advanced/table-sort',
       name: 'TableSortPage',
       component: TableSortPage
-    }, {
+    },
+    {
       path: '/advanced/table-scroll',
       name: 'TableScrollPage',
       component: TableScrollPage
-    }, {
+    },
+    {
       path: '/components/dropdown',
       name: 'DropdownPage',
       component: DropdownPage
-    }, {
+    },
+    {
       path: '/css/jumbotron',
       name: 'JumbotronPage',
       component: JumbotronPage
-    }, {
+    },
+    {
       path: '/advanced/carousel',
       name: 'CarouselPage',
       component: CarouselPage
-    }, {
+    },
+    {
       path: '/components/breadcrumb',
       name: 'BreadcrumbPage',
       component: BreadcrumbPage
-    }, {
+    },
+    {
       path: '/css/hover',
       name: 'HoverPagePage',
       component: HoverPage
-    }, {
-      path: '/css/icons',
-      name: 'FaPage',
-      component: FaPage
-    }, {
+    },
+    {
       path: '/components/inputs',
       name: 'InputsPage',
       component: InputsPage
-    }, {
+    },
+    {
       path: '/components/liveDemo',
       name: 'LiveDemoPage',
       component: LiveDemoPage
-    }, {
+    },
+    {
       path: '/components/media',
       name: 'MediaPage',
       component: MediaPage
-    }, {
+    },
+    {
       path: '/components/listgroup',
       name: 'ListGroupPage',
       component: ListGroupPage
-    }, {
+    },
+    {
       path: '/components/navbar',
       name: 'NavbarPage',
       component: NavbarPage
-    }, {
+    },
+    {
       path: '/components/navigation',
       name: 'NavigationPage',
       component: NavigationPage
-    }, {
+    },
+    {
       path: '/advanced/collapse',
       name: 'CollapsePage',
       component: CollapsePage
-    }, {
+    },
+    {
       path: '/components/pagination',
       name: 'PaginationPage',
       component: PaginationPage
-    }, {
+    },
+    {
       path: '/components/panel',
       name: 'PanelPage',
       component: PanelPage
-    }, {
+    },
+    {
       path: '/advanced/chart',
       name: 'ChartPage',
       component: ChartPage
-    }, {
+    },
+    {
       path: '/components/progress-bars',
       name: 'ProgressBarsPage',
       component: ProgressBarsPage
-    }, {
+    },
+    {
       path: '/advanced/tooltip',
       name: 'TooltipPage',
       component: TooltipPage
-    }, {
+    },
+    {
       path: '/advanced/popover',
       name: 'PopoverPage',
       component: PopoverPage
-    }, {
+    },
+    {
       path: '/components/edge-header',
       name: 'EdgeHeaderPage',
       component: EdgeHeaderPage
-    }, {
+    },
+    {
       path: '/css/masks',
       name: 'MasksPage',
       component: MasksPage
-    }, {
+    },
+    {
       path: '/advanced/validation',
       name: 'ValidationPage',
       component: ValidationPage
-    }, {
+    },
+    {
       path: '/advanced/videocarousel',
       name: 'VideoCarouselPage',
       component: VideoCarouselPage
-    }, {
+    },
+    {
       path: '/advanced/modal',
       name: 'ModalPage',
       component: ModalPage
-    }, {
+    },
+    {
       path: '/components/forms',
       name: 'FormsPage',
       component: FormsPage
-    }, {
+    },
+    {
       path: '/components/search',
       name: 'SearchPage',
       component: SearchPage
-    }, {
+    },
+    {
       path: '/components/footer',
       name: 'FooterPage',
       component: FooterPage

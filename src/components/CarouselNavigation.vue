@@ -1,8 +1,44 @@
+<script>
+const CarouselNavigation = {
+  props: {
+    testimonial: {
+      type: Boolean,
+      default: false
+    },
+    top: {
+      type: Boolean,
+      default: false
+    }
+  },
+
+  methods: {
+    prev() {
+      this.$emit('changeSlide', { slideIndex: 'prev' });
+    },
+
+    next() {
+      this.$emit('changeSlide', { slideIndex: 'next' });
+    }
+  }
+};
+
+export default CarouselNavigation;
+export { CarouselNavigation as mdbCarouselControl };
+</script>
+
 <template>
   <div>
-    <div v-if="top" :class="className">
-      <a class="btn-floating" @click.prevent="prev"><i class="fa fa-chevron-left"></i></a>
-      <a class="btn-floating" @click.prevent="next"><i class="fa fa-chevron-right"></i></a>
+    <div v-if="top" class="controls-top">
+      <a class="btn-floating" @click.prevent="prev">
+        <slot name="prev">
+          <strong>&lt;</strong>
+        </slot>
+      </a>
+      <a class="btn-floating" @click.prevent="next">
+        <slot name="next">
+          <strong>&gt;</strong>
+        </slot>
+      </a>
     </div>
     <div v-else-if="testimonial">
       <a class="carousel-control carousel-item-prev left" @click.prevent="prev">
@@ -26,40 +62,6 @@
     </div>
   </div>
 </template>
-
-<script>
-import classNames from 'classnames';
-
-const CarouselNavigation = {
-  props: {
-    top: {
-      type: Boolean,
-      default: false
-    },
-    testimonial: {
-      type: Boolean
-    }
-  },
-  computed: {
-    className() {
-      return classNames(
-        'controls-top'
-      );
-    }
-  },
-  methods: {
-    prev() {
-      this.$emit('changeSlide', {'slideIndex': 'prev'});
-    },
-    next() {
-      this.$emit('changeSlide', {'slideIndex': 'next'});
-    }
-  }
-};
-
-export default CarouselNavigation;
-export { CarouselNavigation as mdbCarouselControl };
-</script>
 
 <style scoped>
 </style>

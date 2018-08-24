@@ -25,47 +25,44 @@
       <badge pill color="green">Green</badge>
     </row>
     <row center class="mt-5">
-      <badge><fa icon="facebook"/></badge>
-      <badge color="primary-color"><fa icon="instagram"/></badge>
-      <badge color="success-color"><fa icon="snapchat-ghost"/></badge>
-      <badge color="info-color"><fa icon="anchor"/></badge>
-      <badge color="warning-color"><fa icon="sun-o"/></badge>
-      <badge color="danger-color"><fa icon="battery-3"/></badge>
+      <badge></badge>
+      <badge color="primary-color"><fa-icon :icon="['fab', 'facebook-f']"></fa-icon></badge>
+      <badge color="success-color"><fa-icon :icon="['fab', 'snapchat-ghost']"></fa-icon></badge>
+      <badge color="info-color"><fa-icon icon="anchor"></fa-icon></badge>
+      <badge color="warning-color"><fa-icon :icon="['far', 'sun']"></fa-icon></badge>
+      <badge color="danger-color"><fa-icon icon="battery-three-quarters"></fa-icon></badge>
     </row>
     <row around class="mt-5">
-      <badge pill color="pink"><fa icon="wheelchair"/></badge>
-      <badge pill color="light-blue"><fa icon="heart-o"/></badge>
-      <badge pill color="indigo"><fa icon="bullhorn"/></badge>
-      <badge pill color="purple"><fa icon="comments-o"/></badge>
-      <badge pill color="orange"><fa icon="coffee"/></badge>
-      <badge pill color="green"><fa icon="user"/></badge>
+      <badge pill color="pink"><fa-icon icon="wheelchair"></fa-icon></badge>
+      <badge pill color="light-blue"><fa-icon :icon="['far', 'heart']"></fa-icon></badge>
+      <badge pill color="indigo"><fa-icon icon="bullhorn"></fa-icon></badge>
+      <badge pill color="purple"><fa-icon :icon="['far', 'comments']"></fa-icon></badge>
+      <badge pill color="orange"><fa-icon icon="coffee"></fa-icon></badge>
+      <badge pill color="green"><fa-icon icon="user"></fa-icon></badge>
     </row>
     <row between class="mt-5">
-      <badge color="indigo"><fa icon="android" size="2x"/></badge>
-      <badge color="cyan"><fa icon="cog" size="2x"/></badge>
-      <badge color="orange"><fa icon="btc" size="2x"/></badge>
-      <badge pill color="teal"><fa icon="heart" size="2x"/></badge>
-      <badge pill color="green"><fa icon="apple" size="2x"/></badge>
-      <badge pill color="purple"><fa icon="users" size="2x"/></badge>
+      <badge color="indigo"><fa-icon :icon="['fab', 'android']" size="2x"></fa-icon></badge>
+      <badge color="cyan"><fa-icon icon="cog" size="2x"></fa-icon></badge>
+      <badge color="orange"><fa-icon :icon="['fab', 'btc']" size="2x"></fa-icon></badge>
+      <badge pill color="teal"><fa-icon icon="heart" size="2x"></fa-icon></badge>
+      <badge pill color="green"><fa-icon :icon="['fab', 'apple']" size="2x"></fa-icon></badge>
+      <badge pill color="purple"><fa-icon icon="users" size="2x"></fa-icon></badge>
     </row>
   </container>
 </template>
 
 <script>
-import { Badge, Row, Container, Fa } from 'mdbvue';
+import { Badge, Container, Row } from 'mdbvue';
 
 export default {
   name: 'BadgePage',
   components: {
     Badge,
     Container,
-    Row,
-    Fa
+    Row
   }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 </style>

@@ -3,16 +3,16 @@
     <row>
       <column md="8" class="mx-auto">
         <jumbotron class="mt-5">
-          <h1><Fa icon="css3" class="grey-text" /> CSS</h1>
+          <h1><fa-icon class="grey-text" :icon="['fab', 'css3']"></fa-icon> CSS</h1>
           <ul class="list-unstyled example-components-list">
             <h6>FREE</h6>
-            <a href="#/css/hover"><li>Hover effects<fa icon="angle-right"/></li></a>
-            <a href="#/css/icons"><li>Icons <fa icon="angle-right"/></li></a>
-            <a href="#/css/jumbotron"><li>Jumbotron <fa icon="angle-right"/></li></a>
-            <a href="#/css/masks"><li>Masks <fa icon="angle-right"/></li></a>
-            <a href="#/css/table"><li>Table <fa icon="angle-right"/></li></a>
-            <a href="#/css/table-additional"><li>Table Additional <fa icon="angle-right"/></li></a>
-            <a href="#/css/table-responsive"><li>Table Responsive <fa icon="angle-right"/></li></a>
+            <a href="#/css/hover"><li>Hover effects <fa-icon icon="angle-right"></fa-icon></li></a>
+            <a href="#/css/icons"><li>Icons <fa-icon icon="angle-right"></fa-icon></li></a>
+            <a href="#/css/jumbotron"><li>Jumbotron <fa-icon icon="angle-right"></fa-icon></li></a>
+            <a href="#/css/masks"><li>Masks <fa-icon icon="angle-right"></fa-icon></li></a>
+            <a href="#/css/table"><li>Table <fa-icon icon="angle-right"></fa-icon></li></a>
+            <a href="#/css/table-additional"><li>Table Additional <fa-icon icon="angle-right"></fa-icon></li></a>
+            <a href="#/css/table-responsive"><li>Table Responsive <fa-icon icon="angle-right"></fa-icon></li></a>
           </ul>
         </jumbotron>
       </column>
@@ -21,16 +21,15 @@
 </template>
 
 <script>
-import { Container, Row, Column, Fa, Jumbotron } from 'mdbvue';
+import { Column, Container, Jumbotron, Row } from 'mdbvue';
 
 export default {
   name: 'CSSPage',
   components: {
-    Container,
-    Row,
     Column,
-    Fa,
-    Jumbotron
+    Container,
+    Jumbotron,
+    Row
   }
 };
 </script>
@@ -56,7 +55,7 @@ export default {
   background-color: #fafafa;
 }
 
-.example-components-list i {
+.example-components-list svg {
   float: right;
   padding-top: 3px;
 }

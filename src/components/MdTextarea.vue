@@ -1,81 +1,72 @@
 <template>
   <div :class="wrapperClass">
-    <i v-if="icon" :class="iconClasses"/>
-    <textarea
-              :is="tag"
-              :class="textareaClass"
-              :type="type"
-              :placeholder="placeholder"
-              :disabled="disabled" @focus="focus"
-              @blur="blur"
-              ref="input"
-              :rows="rows"
-              @input="onChange"
-              v-model="innerValue" />
-    <label v-if="label" :class="labelClass" ref="label" @click="focus">{{label}}
-    </label><slot></slot>
+    <slot :class="iconClasses" name="prefix"></slot>
+    <component
+      v-model="innerValue"
+      ref="input"
+      :class="textareaClass"
+      :disabled="disabled"
+      :is="tag"
+      :placeholder="placeholder"
+      :rows="rows"
+      :type="type"
+      @blur="blur"
+      @focus="focus"
+      @input="onChange"
+    >
+    </component>
+    <label v-if="label" :class="labelClass" ref="label" @click="focus">
+      {{label}}
+    </label>
+    <slot></slot>
   </div>
 </template>
 
 <script>
 import classNames from 'classnames';
-// import 'font-awesome/css/font-awesome.min.css';
-// import Fa from './Fa';
 
 const MdTextarea = {
   props: {
-    tag: {
-      type: String,
-      default: "textarea"
-    },
-    label: {
-      type: String
-    },
-    icon: {
-      type: String,
-    },
-    type: {
-      type: String,
-    },
-    placeholder: {
-      type: String
-    },
     disabled: {
       type: Boolean,
       default: false
     },
+    iconClass: {
+      type: String
+    },
+    label: {
+      type: String
+    },
+    placeholder: {
+      type: String
+    },
     rows: {
       type: Number
+    },
+    tag: {
+      type: String,
+      default: 'textarea'
+    },
+    type: {
+      type: String,
     },
     value: {
       type: String,
       default: ''
-    },
-    iconClass: {
-      type: String
     }
   },
 
   data() {
     return {
-      isTouched: false,
-      innerValue: this.value
+      innerValue: this.value,
+      isTouched: false
     };
   },
+
   computed: {
-    textareaClass() {
-      return classNames(
-        'form-control md-textarea'
-      );
-    },
-    wrapperClass() {
-      return classNames(
-        'md-form'
-      );
-    },
     iconClasses() {
       return classNames(
-        'prefix fa fa-' + this.icon,
+        'prefix',
         this.isTouched && 'active',
         this.iconClass
       );
@@ -85,19 +76,31 @@ const MdTextarea = {
         (this.isTouched || this.placeholder || this.innerValue !== '') && 'active',
         this.disabled && 'disabled'
       );
+    },
+    textareaClass() {
+      return classNames(
+        'form-control md-textarea'
+      );
+    },
+    wrapperClass() {
+      return classNames(
+        'md-form'
+      );
     }
   },
   methods: {
-    focus(e) {
+    blur() {
+      this.isTouched = false;
+      this.$refs.input.blur();
+    },
+
+    focus() {
       if (this.label && !this.disabled) {
         this.isTouched = true;
         this.$refs.input.focus();
       }
     },
-    blur(e) {
-      this.isTouched = false;
-      this.$refs.input.blur();
-    },
+
     onChange(e) {
       this.$emit('input', e.target.value);
       this.innerValue = e.target.value;
